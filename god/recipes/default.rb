@@ -10,7 +10,7 @@
 
 case node[:platform]
     when "centos","redhat","fedora"
-	%w{ruby ruby-devel ruby-ri ruby-rdoc ruby-shadow gcc gcc-c++ automake autoconf make}.each do |tool_package|
+	%w{ruby ruby-devel ruby-ri ruby-rdoc gcc gcc-c++ automake autoconf make}.each do |tool_package|
 	    package tool_package
 	end
 end
