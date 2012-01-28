@@ -16,7 +16,6 @@ name="god"
 #don't forget  about rc.conf (god_enable="YES")
 if [ -f /etc/rc.subr ]; then
     . /etc/rc.subr
-    name=god
     rcvar=`set_rcvar`
 fi
  
@@ -28,7 +27,11 @@ case "$1" in
       RETVAL=$?
   ;;
     stop)
-      $GODCMD terminate || kill -9 `cat ${PIDFILE}`
+      $GODCMD terminate || if [ -f $PIDFILE ]; then 
+				echo "Sending KILL signal..."
+				kill -9 `cat ${PIDFILE}`
+				rm $PIDFILE
+			   fi
       RETVAL=$?
   ;;
     restart)
