@@ -22,7 +22,7 @@ package "rubygems" do
 	when "debian","ubuntu"
 	    package_name "rubygems"
 	when "freebsd"
-	    package_name "ruby18-gems"
+	    package_name "ruby-gems"
 	else
 	    package_name "rubygems"
     end
@@ -36,7 +36,6 @@ end
 
 directory "/usr/local/etc/god" do
     owner "root"
-    group "root"
     mode  "0755"
     action :create
 end
@@ -45,7 +44,6 @@ end
 template "/usr/local/etc/god.conf" do
   source "god.conf.erb"
   owner "root"
-  group "root"
   mode "0644"
 end
 
@@ -54,14 +52,12 @@ case node[:platform]
 	template "/usr/local/etc/rc.d/god" do
 	    source "god.initrc.erb"
 	    owner "root"
-	    group "root"
 	    mode  "0755"
 	end
     else 
 	template "/etc/init.d/god" do
 	    source "god.initrc.erb"
 	    owner "root"
-	    group "root"
 	    mode  "0755"
 	end
 end

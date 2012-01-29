@@ -10,6 +10,7 @@ GODDIR=`gem env | grep "EXECUTABLE DIRECTORY"| cut -d " " -f 6`
 GODCMD=${GODDIR}/god
 PIDFILE=/var/run/god.pid
 GODCONF=/usr/local/etc/god.conf
+name="god"
 
 #FreeBSD compatibility block
 #don't forget  about rc.conf (god_enable="YES")
