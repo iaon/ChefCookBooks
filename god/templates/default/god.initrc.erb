@@ -43,8 +43,12 @@ case "$1" in
       $GODCMD status && echo "[ OK ] god is up and running"
       RETVAL=$?
   ;;
+    reload)
+      $GODCMD load $GODCONF
+      RETVAL=$?
+  ;;
     *)
-      echo "Usage: god {start|stop|restart|status}"
+      echo "Usage: god {start|stop|restart|status|reload}"
       exit 1
   ;;
 esac
