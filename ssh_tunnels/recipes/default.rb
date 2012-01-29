@@ -15,7 +15,6 @@ node[:tunnels].each do |t|
   template "/usr/local/etc/god/ssh_tunnel_#{t[:local_port]}.god" do
     source "ssh_tunnel.god.erb"
     owner "root"
-    group "root"
     mode  "0644"
     variables(t)
   end
