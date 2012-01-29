@@ -1,0 +1,8 @@
+God.watch do |w|
+  w.name = "ssh_tunnel_<%= @local_port %>"
+  w.group = "ssh_tunnels"
+  w.start = "ssh -N -o TCPKeepAlive=yes -o StrictHostKeyChecking=<%= @StrictHostKeyChecking %> -i <%= @ssh_key %> -p <%= @ssh_port %>  -L <%= @local_port %>:<%= @remote_host %>:<%= @remote_port %> <%= @ssh_user %>@<%= @ssh_gateway %> "
+  w.keepalive
+end
+
+

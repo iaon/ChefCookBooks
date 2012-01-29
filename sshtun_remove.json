@@ -1,0 +1,7 @@
+{
+
+"tunnels2remove": [8884,8889],
+
+
+"run_list": [ "recipe[ssh_tunnels::remove]" ]
+}

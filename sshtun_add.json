@@ -1,0 +1,39 @@
+{
+
+"tunnels": [
+  {
+    "ssh_gateway": "192.168.0.150",
+    "ssh_port": "22",
+    "ssh_user": "downloader",
+    "ssh_key": "/root/.ssh/id_dsa",
+    "local_port": "8888",
+    "remote_host": "ya.ru",
+    "remote_port": "80",
+    "StrictHostKeyChecking": "no"
+  },
+  {
+    "ssh_gateway": "192.168.0.150",
+    "ssh_port": "22",
+    "ssh_user": "downloader",
+    "ssh_key": "/root/.ssh/id_dsa",
+    "local_port": "8889",
+    "remote_host": "google.com",
+    "remote_port": "80",
+    "StrictHostKeyChecking": "no"
+  },
+  {
+    "ssh_gateway": "192.168.0.150",
+    "ssh_port": "22",
+    "ssh_user": "downloader",
+    "ssh_key": "/root/.ssh/id_dsa",
+    "local_port": "8884",
+    "remote_host": "google.com",
+    "remote_port": "80",
+    "StrictHostKeyChecking": "no"
+  }
+
+],
+
+
+"run_list": [ "recipe[ssh_tunnels]" ]
+}

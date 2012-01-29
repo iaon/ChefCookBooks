@@ -1,0 +1,7 @@
+{
+
+"tunnels2restart": [8888],
+
+
+"run_list": [ "recipe[ssh_tunnels::restart]" ]
+}
