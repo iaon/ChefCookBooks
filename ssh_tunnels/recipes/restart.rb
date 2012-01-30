@@ -1,16 +1,16 @@
 #
 # Cookbook Name:: ssh_tunnels
-# Recipe:: default
+# Recipe:: restart
 #
-# Copyright 2012, YOUR_COMPANY_NAME
+# Copyright 2012, Ivan Onushkin
 #
 # All rights reserved - Do Not Redistribute
 #
 
 
-
+#Do restart for each ssh tunnel ID in :tunnels2restart array
 node[:tunnels2restart].each do |t|
-
+#restart ssh tunnel by god
   execute "god restart ssh_tunnel_#{t}"
 
 end
