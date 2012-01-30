@@ -36,10 +36,10 @@ For example:
 	]
 
 First member of the example means that SSH connection will be establilshed to 192.168.0.150 address and port 22 with  'downloader' username. The private key /root/.ssh/id_dsa will be used for auth. Local port 8888 will be forwarded to ya.ru:80. Local port value used as tunnel ID in other recipes in this Cookbook.
-NOTE: This recipe dosn't manage private key and known_hosts file. Option 'StrictHostKeyChecking' can be used to eliminate 'yes/no' prompt about known_hosts but it isn't safety.
+NOTE: This recipe dosn't manage private key and known_hosts file. Option 'StrictHostKeyChecking' can be used to eliminate 'yes/no' prompt about known_hosts but it isn't safety. Chef-solo example json file is "../sshtun_add.json""
 
-Remove recipe - "recipe[ssh_tunnels::remove]". Used to stop and remove tunnels from god's monitoring. IDs (local ports) of tunnels should be defined in 'tunnels2remove' atribute.
+Remove recipe - "recipe[ssh_tunnels::remove]". Used to stop and remove tunnels from god's monitoring. IDs (local ports) of tunnels should be defined in 'tunnels2remove' atribute. Chef-solo example json file is "../sshtun_remove.json"
 
-Restart recipe "recipe[ssh_tunnels::restart]" . Used to restart tunnels.  Tunnels to restart should be defined in 'tunnels2restart' atribute.
+Restart recipe "recipe[ssh_tunnels::restart]" . Used to restart tunnels.  Tunnels to restart should be defined in 'tunnels2restart' atribute. Chef-solo example json file is "../sshtun_restart.json"
 
-Restart all recipe - recipe[ssh_tunnels::restart_all]. Used to restart all present ssh tunnels. Has no specific attributes.
+Restart all recipe - recipe[ssh_tunnels::restart_all]. Used to restart all present ssh tunnels. Has no specific attributes. Chef-solo example json file is "../sshtun_restart_all.json"
