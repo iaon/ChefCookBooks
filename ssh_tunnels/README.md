@@ -20,6 +20,7 @@ Attributes and usage
 
 Default recipe 'recipe[ssh_tunnels]' used for adding ssh tunnels to the node. Tunnels properties described in 'tunnels' attribute. It is an array. Each member of this array defines one tunnel.
 For example:
+
 	"tunnels": [
 	  {
 	    "ssh_gateway": "192.168.0.150",
@@ -33,6 +34,7 @@ For example:
 	  },
 	  ....
 	]
+
 First member of the example means that SSH connection will be establilshed to 192.168.0.150 address and port 22 with  'downloader' username. The private key /root/.ssh/id_dsa will be used for auth. Local port 8888 will be forwarded to ya.ru:80. Local port value used as tunnel ID in other recipes in this Cookbook.
 NOTE: This recipe dosn't manage private key and known_hosts file. Option 'StrictHostKeyChecking' can be used to eliminate 'yes/no' prompt about known_hosts but it isn't safety.
 
