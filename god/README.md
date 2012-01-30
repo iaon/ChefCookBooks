@@ -17,7 +17,7 @@ Platform:
 Attributes
 ==========
 
-Nothing spetial, simply include the recipe where you want 'god' istalled 
+Nothing special, simply include the recipe where you want 'god' istalled 
 "recipe[god]"
 
 Usage
